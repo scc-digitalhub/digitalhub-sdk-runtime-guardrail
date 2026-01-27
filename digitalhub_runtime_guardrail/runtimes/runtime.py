@@ -9,7 +9,6 @@ from typing import Callable
 from digitalhub.context.api import get_context
 from digitalhub.runtimes._base import Runtime
 from digitalhub.utils.logger import LOGGER
-
 from digitalhub_runtime_python.utils.configuration import import_function_from_source
 from digitalhub_runtime_python.utils.inputs import compose_inputs
 from digitalhub_runtime_python.utils.outputs import build_new_status, parse_outputs

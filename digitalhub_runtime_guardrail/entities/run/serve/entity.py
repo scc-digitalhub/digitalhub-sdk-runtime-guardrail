@@ -6,9 +6,6 @@ from __future__ import annotations
 
 import typing
 
-import requests
-from digitalhub.utils.exceptions import EntityError
-
 from digitalhub_runtime_guardrail.entities.run._base.entity import RunGuardrailRun
 
 if typing.TYPE_CHECKING:

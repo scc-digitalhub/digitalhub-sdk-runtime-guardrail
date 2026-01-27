@@ -10,7 +10,6 @@ from digitalhub.entities.function._base.entity import Function
 from digitalhub.utils.generic_utils import decode_base64_string
 from digitalhub.utils.io_utils import write_text
 from digitalhub.utils.uri_utils import has_local_scheme
-
 from digitalhub_runtime_python.entities.function.python.utils import read_installed_packages
 
 if typing.TYPE_CHECKING:

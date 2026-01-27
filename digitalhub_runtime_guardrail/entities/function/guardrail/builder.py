@@ -5,13 +5,16 @@
 from __future__ import annotations
 
 from digitalhub.entities.function._base.builder import FunctionBuilder
+from digitalhub_runtime_python.entities.function.python.utils import source_check, source_post_check
 
 from digitalhub_runtime_guardrail.entities._base.runtime_entity.builder import RuntimeEntityBuilderGuardrail
 from digitalhub_runtime_guardrail.entities._commons.enums import EntityKinds
 from digitalhub_runtime_guardrail.entities.function.guardrail.entity import FunctionGuardrail
-from digitalhub_runtime_guardrail.entities.function.guardrail.spec import FunctionSpecGuardrail, FunctionValidatorGuardrail
+from digitalhub_runtime_guardrail.entities.function.guardrail.spec import (
+    FunctionSpecGuardrail,
+    FunctionValidatorGuardrail,
+)
 from digitalhub_runtime_guardrail.entities.function.guardrail.status import FunctionStatusGuardrail
-from digitalhub_runtime_python.entities.function.python.utils import source_check, source_post_check
 
 
 class FunctionGuardrailBuilder(FunctionBuilder, RuntimeEntityBuilderGuardrail):
@@ -72,8 +75,6 @@ class FunctionGuardrailBuilder(FunctionBuilder, RuntimeEntityBuilderGuardrail):
 
         Parameters
         ----------
-        entity : str
-            Entity type.
         obj : dict
             Dictionary to parse.
 
