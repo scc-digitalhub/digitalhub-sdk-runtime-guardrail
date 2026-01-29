@@ -127,12 +127,12 @@ jobs:
           # Set the required variables
           repo_owner="scc-digitalhub"
           event_type="trigger-workflow"
-          lib_name="modelserve"
+          lib_name="guardrail"
           lib_vers=${{ needs.bumpver-pyproject.outputs.version }}
           branch=${{ github.ref }}
 
           # Define the repositories to trigger
-          repos=( "digitalhub-tests" "digitalhub-serverless" "digitalhub-sdk-wrapper-hera")
+          repos=( "digitalhub-tests" "digitalhub-sdk-wrapper-hera")
 
           # Loop over the repositories and trigger the workflow
           for repo in "${repos[@]}"; do
