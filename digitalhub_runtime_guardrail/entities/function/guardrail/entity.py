@@ -13,8 +13,6 @@ from digitalhub.utils.uri_utils import has_local_scheme
 from digitalhub_runtime_python.entities.function.python.utils import read_installed_packages
 
 if typing.TYPE_CHECKING:
-    from digitalhub.entities._base.entity.metadata import Metadata
-
     from digitalhub_runtime_guardrail.entities.function.guardrail.spec import FunctionSpecGuardrail
     from digitalhub_runtime_guardrail.entities.function.guardrail.status import FunctionStatusGuardrail
 
@@ -24,18 +22,8 @@ class FunctionGuardrail(Function):
     FunctionGuardrail class.
     """
 
-    def __init__(
-        self,
-        project: str,
-        name: str,
-        uuid: str,
-        kind: str,
-        metadata: Metadata,
-        spec: FunctionSpecGuardrail,
-        status: FunctionStatusGuardrail,
-        user: str | None = None,
-    ) -> None:
-        super().__init__(project, name, uuid, kind, metadata, spec, status, user)
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
 
         self.spec: FunctionSpecGuardrail
         self.status: FunctionStatusGuardrail

@@ -18,8 +18,8 @@ from digitalhub_runtime_guardrail.entities._commons.enums import Actions
 from digitalhub_runtime_guardrail.entities.run._base.utils import get_getter_for_material
 
 if typing.TYPE_CHECKING:
-    from digitalhub.entities._base.entity.metadata import Metadata
     from digitalhub.entities._base.material.entity import MaterialEntity
+    from digitalhub.entities._base.metadata.entity import Metadata
 
     from digitalhub_runtime_guardrail.entities.run._base.spec import RunSpecGuardrailRun
     from digitalhub_runtime_guardrail.entities.run._base.status import RunStatusGuardrailRun
