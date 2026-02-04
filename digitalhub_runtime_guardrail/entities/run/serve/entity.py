@@ -9,7 +9,6 @@ import typing
 from digitalhub_runtime_guardrail.entities.run._base.entity import RunGuardrailRun
 
 if typing.TYPE_CHECKING:
-    from digitalhub.entities._base.metadata.entity import Metadata
 
     from digitalhub_runtime_guardrail.entities.run.serve.spec import RunSpecGuardrailRunServe
     from digitalhub_runtime_guardrail.entities.run.serve.status import RunStatusGuardrailRunServe
@@ -20,17 +19,8 @@ class RunGuardrailRunServe(RunGuardrailRun):
     RunGuardrailRunServe class.
     """
 
-    def __init__(
-        self,
-        project: str,
-        uuid: str,
-        kind: str,
-        metadata: Metadata,
-        spec: RunSpecGuardrailRunServe,
-        status: RunStatusGuardrailRunServe,
-        user: str | None = None,
-    ) -> None:
-        super().__init__(project, uuid, kind, metadata, spec, status, user)
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
 
         self.spec: RunSpecGuardrailRunServe
         self.status: RunStatusGuardrailRunServe

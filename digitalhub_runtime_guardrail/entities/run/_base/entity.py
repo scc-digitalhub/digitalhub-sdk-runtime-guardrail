@@ -19,7 +19,6 @@ from digitalhub_runtime_guardrail.entities.run._base.utils import get_getter_for
 
 if typing.TYPE_CHECKING:
     from digitalhub.entities._base.material.entity import MaterialEntity
-    from digitalhub.entities._base.metadata.entity import Metadata
 
     from digitalhub_runtime_guardrail.entities.run._base.spec import RunSpecGuardrailRun
     from digitalhub_runtime_guardrail.entities.run._base.status import RunStatusGuardrailRun
@@ -30,17 +29,8 @@ class RunGuardrailRun(Run):
     RunGuardrailRun class.
     """
 
-    def __init__(
-        self,
-        project: str,
-        uuid: str,
-        kind: str,
-        metadata: Metadata,
-        spec: RunSpecGuardrailRun,
-        status: RunStatusGuardrailRun,
-        user: str | None = None,
-    ) -> None:
-        super().__init__(project, uuid, kind, metadata, spec, status, user)
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
 
         self.spec: RunSpecGuardrailRun
         self.status: RunStatusGuardrailRun
