@@ -9,7 +9,6 @@ import typing
 from digitalhub_runtime_guardrail.entities.run._base.entity import RunGuardrailRun
 
 if typing.TYPE_CHECKING:
-
     from digitalhub_runtime_guardrail.entities.run.serve.spec import RunSpecGuardrailRunServe
     from digitalhub_runtime_guardrail.entities.run.serve.status import RunStatusGuardrailRunServe
 
