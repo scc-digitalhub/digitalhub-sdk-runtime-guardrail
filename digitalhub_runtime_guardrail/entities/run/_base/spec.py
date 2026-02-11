@@ -37,7 +37,6 @@ class RunSpecGuardrailRun(RunSpec):
     ) -> None:
         super().__init__(
             task,
-            local_execution,
             function,
             workflow,
             volumes,

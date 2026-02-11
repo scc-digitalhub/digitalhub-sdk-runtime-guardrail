@@ -25,30 +25,6 @@ class RuntimeGuardrail(Runtime):
         self.runtime_dir = ctx.root / "runtime_guardrail"
         self.runtime_dir.mkdir(parents=True, exist_ok=True)
 
-    def build(self, function: dict, task: dict, run: dict) -> dict:
-        """
-        Build run spec.
-
-        Parameters
-        ----------
-        function : dict
-            The function.
-        task : dict
-            The task.
-        run : dict
-            The run.
-
-        Returns
-        -------
-        dict
-            The run spec.
-        """
-        return {
-            **function.get("spec", {}),
-            **task.get("spec", {}),
-            **run.get("spec", {}),
-        }
-
     def run(self, run: dict) -> dict:
         """
         Run function.
