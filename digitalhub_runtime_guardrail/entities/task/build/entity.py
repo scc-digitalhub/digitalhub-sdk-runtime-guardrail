@@ -9,8 +9,6 @@ import typing
 from digitalhub.entities.task._base.entity import Task
 
 if typing.TYPE_CHECKING:
-    from digitalhub.entities._base.entity.metadata import Metadata
-
     from digitalhub_runtime_guardrail.entities.task.build.spec import TaskSpecGuardrailBuild
     from digitalhub_runtime_guardrail.entities.task.build.status import TaskStatusGuardrailBuild
 
@@ -20,17 +18,8 @@ class TaskGuardrailBuild(Task):
     TaskGuardrailBuild class.
     """
 
-    def __init__(
-        self,
-        project: str,
-        uuid: str,
-        kind: str,
-        metadata: Metadata,
-        spec: TaskSpecGuardrailBuild,
-        status: TaskStatusGuardrailBuild,
-        user: str | None = None,
-    ) -> None:
-        super().__init__(project, uuid, kind, metadata, spec, status, user)
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
 
         self.spec: TaskSpecGuardrailBuild
         self.status: TaskStatusGuardrailBuild
